@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'screens/camera_preview_screen.dart';
 
 class App extends StatelessWidget {

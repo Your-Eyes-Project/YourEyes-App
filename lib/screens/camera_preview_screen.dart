@@ -59,7 +59,6 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
 
   Future<void> streamVideo(CameraImage image) async {
     String text = await client.streamVideo(image);
-    print("Image Frame Sent");
     if (!textToSpeech.isSpeaking) {
       textToSpeech.speak(text);
     }
