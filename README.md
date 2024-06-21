@@ -19,11 +19,20 @@ YourEyes is a mobile application designed to assist blind and visually impaired 
 
 ## Project Structure
 
-- **lib**: Contains the main Flutter application code.
-- **assets**: Contains images, audio files, and other static resources.
-- **test**: Contains unit and widget tests for the app.
-- **android**: Contains the Android-specific code.
-- **ios**: Contains the iOS-specific code.
+Please follow this structure that helps in maintaining a clean, organized, and scalable project.
+
+- **controllers/**: Contains controllers for managing request and response cycles.
+- **models/**: Contains data models.
+- **services/**: Contains business logic and services.
+- **screens/**: Contains the different screens of the application.
+- **widgets/**: Contains reusable widgets used across the app.
+- **repositories/**: Contains data access and storage logic.
+- **providers/**: Contains state management logic.
+- **helpers/**: Contains utility functions and helper classes.
+- **constants/**: Contains constant values used throughout the app.
+- **themes/**: Contains app themes and design-related configurations.
+- **routes/**: Contains navigation logic.
+- **assets/**: Contains static files such as images, fonts, and JSON files.
 
 ## Task List
 
@@ -34,6 +43,7 @@ YourEyes is a mobile application designed to assist blind and visually impaired 
 - [ ] Implement settings for customization (e.g., voice speed, language)
 - [ ] Develop user tutorials and help sections
 - [ ] Write code documentation
+- [ ] Provide test cases
 
 ## Contributing
 

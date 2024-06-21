@@ -1,15 +1,6 @@
 
 # Security Policy
 
-## Supported Versions
-
-We release patches for security vulnerabilities in the following versions:
-
-| Version | Supported          |
-| ------- | ------------------ |
-| 1.x     | :white_check_mark: |
-| < 1.0   | :x:                |
-
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability, please report it to us privately. We will work with you to ensure that the vulnerability is understood and patched.
