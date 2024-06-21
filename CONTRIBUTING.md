@@ -1,182 +1,79 @@
+# Contributing to YourEyes-App
 
-# Contributing to AInak
+First off, thank you for considering contributing to YourEyes! We welcome contributions of all kinds: documentation, bug reports, feature requests, and code improvements.
 
-First off, thank you for considering contributing to our project! It's people like you that make it such a great community.
+## Table of Contents
+- [How Can I Contribute?](#how-can-i-contribute)
+    - [Reporting Bugs](#reporting-bugs)
+    - [Suggesting Features](#suggesting-features)
+    - [Contributing Code](#contributing-code)
+- [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
+- [Style Guides](#style-guides)
+    - [Git Commit Messages](#git-commit-messages)
+    - [Code Style](#code-style)
+- [Pull Request Process](#pull-request-process)
+- [License](#license)
 
-## Getting Started
-
-### Fork the Repository
-
-1. Fork the repository by clicking the "Fork" button on the project page.
-2. Clone the forked repository to your local machine:
-
-```bash
-git clone https://github.com/lafi-odeh/AInak.git
-cd AInak
-```
-
-### Set Up Your Environment
-
-#### For Dart
-
-1. Install Dart by following the [official instructions](https://dart.dev/get-dart).
-2. Install the required dependencies:
-
-```bash
-dart pub get
-```
-
-3. Run the project locally:
-
-```bash
-dart run
-```
-
-#### For Python
-
-1. Install Python by following the [official instructions](https://www.python.org/downloads/).
-2. Create a virtual environment:
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
-
-3. Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Run the Python scripts:
-
-```bash
-python script.py
-```
-
-### Running Tests
-
-#### For Dart
-
-Run the test suite to ensure everything is working correctly:
-
-```bash
-dart test
-```
-
-#### For Python
-
-Run the test suite to ensure everything is working correctly:
-
-```bash
-pytest
-```
-
-## How to Contribute
+## How Can I Contribute?
 
 ### Reporting Bugs
-
-If you find a bug, please open an issue and include the following information:
-
-- A clear and descriptive title
-- A detailed description of the problem
-- Steps to reproduce the issue
-- Any relevant logs or screenshots
+If you find a bug in the project, please report it by opening an issue in the [issue tracker](https://github.com/Your-Eyes-Project/YourEyes-App/issues). Please include:
+- A clear and descriptive title.
+- A description of the steps to reproduce the issue.
+- Any relevant information about your environment (e.g., operating system, device type).
 
 ### Suggesting Features
+If you have an idea for a new feature, please submit it as an issue in the [issue tracker](https://github.com/Your-Eyes-Project/YourEyes-App/issues). Describe your idea in detail and explain why you think it would be a valuable addition to the project.
 
-We welcome feature suggestions! To suggest a new feature, please open an issue and provide:
-
-- A clear and descriptive title
-- A detailed description of the feature and why it would be useful
-- Any additional context or examples
-
-### Improving Documentation
-
-Help us improve our documentation by submitting pull requests with updates or new content. 
-
-### Writing Code
-
-#### For Dart
-
-1. Create a branch for your feature or bug fix:
-
-```bash
-git checkout -b feature/your-feature-name
-```
-
-2. Make your changes, ensuring you follow our [Dart coding standards](#dart-coding-standards).
-3. Commit your changes with a descriptive commit message:
-
-```bash
-git commit -m "Add feature X to improve Y"
-```
-
-4. Push your branch to your fork:
-
-```bash
-git push origin feature/your-feature-name
-```
-
-5. Open a pull request from your branch to the `main` branch of the original repository.
-
-#### For Python
-
-1. Create a branch for your feature or bug fix:
-
-```bash
-git checkout -b feature/your-feature-name
-```
-
-2. Make your changes, ensuring you follow our [Python coding standards](#python-coding-standards).
-3. Commit your changes with a descriptive commit message:
-
-```bash
-git commit -m "Add feature X to improve Y"
-```
-
-4. Push your branch to your fork:
-
-```bash
-git push origin feature/your-feature-name
-```
-
-5. Open a pull request from your branch to the `main` branch of the original repository.
-
-## Coding Standards
-
-### Dart Coding Standards
-
-- Follow the [Effective Dart](https://dart.dev/guides/language/effective-dart) guidelines.
-- Use `dartfmt` to format your code:
-
-```bash
-dart format .
-```
-
-- Write clear, concise, and descriptive commit messages.
-- Include comments in your code where necessary.
-
-### Python Coding Standards
-
-- Follow the [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guide.
-- Use `flake8` to check your code for style violations:
-
-```bash
-flake8 .
-```
-
-- Write clear, concise, and descriptive commit messages.
-- Include comments in your code where necessary.
-
-## Pull Request Process
-
-1. Ensure your code follows the project's coding standards.
-2. Write clear and detailed commit messages.
-3. Ensure all tests pass before submitting your pull request.
-4. Include a description of the changes in your pull request.
-5. Reference any related issues or pull requests.
+### Contributing Code
+If you want to contribute code, please follow these steps:
+1. **Fork the repository**: Click the "Fork" button at the top of the repository page.
+2. **Clone your fork**:
+   git clone https://github.com/your-username/YourEyes-App.git
+3. **Create a new branch**:
+   git checkout -b feature-branch
+4. **Make your changes**: Write code, add tests, and ensure everything works.
+5. **Commit your changes**:
+   git commit -m "Add some feature"
+6. **Push to your branch**:
+   git push origin feature-branch
+7. **Open a pull request**: Go to the original repository and click the "New Pull Request" button.
 
 ## Code of Conduct
+This project follows a [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors. Please read it before contributing.
 
-Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a welcoming and respectful environment for everyone.
+## Getting Started
+To get started with the project:
+1. **Clone the repository**:
+   git clone https://github.com/Your-Eyes-Project/YourEyes-App.git
+2. **Navigate to the project directory**:
+   cd YourEyes-App
+3. **Install dependencies**:
+   flutter pub get
+4. **Run the app**:
+   flutter run
+
+## Style Guides
+
+### Git Commit Messages
+- Use the present tense ("Add feature" not "Added feature").
+- Use the imperative mood ("Move button to..." not "Moves button to...").
+- Limit the first line to 72 characters or less.
+- Reference issues and pull requests liberally after the first line.
+
+### Code Style
+- Follow the [Flutter style guide](https://flutter.dev/docs/development/tools/formatting).
+- Ensure your code passes the linter checks.
+
+## Pull Request Process
+1. Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+2. Update the README.md with details of changes to the interface, including new environment variables, exposed ports, useful file locations, and container parameters.
+3. Increase the version numbers in any examples files and the README.md to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+4. Your pull request will be reviewed by at least one maintainer.
+5. You may merge the pull request once you have the sign-off of at least one maintainer, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+
+## License
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+
+Thank you for contributing!
