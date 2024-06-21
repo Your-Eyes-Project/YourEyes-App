@@ -38,6 +38,7 @@ Please follow this structure that helps in maintaining a clean, organized, and s
 
 - [x] Set up project structure
 - [x] Implement real-time video streaming
+- [ ] Make the project to support IOS
 - [ ] Improve UI/UX for better accessibility
 - [ ] Add support for additional languages
 - [ ] Implement settings for customization (e.g., voice speed, language)
