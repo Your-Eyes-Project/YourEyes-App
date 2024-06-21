@@ -21,7 +21,7 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
   List<CameraDescription>? cameras;
 
   int capturedFrames = 1;
-  int skipRate = 2;
+  int skipRate = 75;
   bool isUserPromptProcessing = false;
 
   @override

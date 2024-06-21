@@ -45,12 +45,17 @@ class ClientStreamingService {
           output += 'Detection: ${detection.label}, Direction: '
               '${detection.direction}, Distance: ${detection.distance} meters';
         }
+        return output;
       }
-      return output;
     } catch (e) {
       return "Please check your connection";
+    } finally {
+      await controller.close();
     }
+
+    return output;
   }
+
 
   Future<void> sendConfiguration(String configuration, bool flag) async {
     var config = SetupRequest()
