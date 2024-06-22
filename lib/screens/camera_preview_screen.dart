@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +19,16 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
   late SpeechToTextService speechToText;
   late TextToSpeechService textToSpeech;
 
+  late final int width;
+  late final int height;
+
   CameraController? controller;
   List<CameraDescription>? cameras;
 
   int capturedFrames = 1;
   int skipRate = 75;
+
+  bool areFramesCaptured = false;
   bool isUserPromptProcessing = false;
 
   @override
@@ -30,10 +37,11 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
     initialize();
   }
 
-  void initialize() async{
+  void initialize() async {
     cameras = await availableCameras();
-    CameraDescription? backCamera = cameras?.firstWhere((camera) => camera.lensDirection == CameraLensDirection.back);
-    controller = CameraController(backCamera!, ResolutionPreset.medium);
+    CameraDescription? backCamera = cameras?.firstWhere(
+        (camera) => camera.lensDirection == CameraLensDirection.back);
+    controller = CameraController(backCamera!, ResolutionPreset.high);
 
     speechToText = SpeechToTextService();
     textToSpeech = TextToSpeechService();
@@ -50,6 +58,13 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
             !textToSpeech.isSpeaking &&
             !speechToText.isListening) {
           capturedFrames = 1;
+
+          if (areFramesCaptured == false) {
+            width = image.width;
+            height = image.height;
+            areFramesCaptured = true;
+          }
+
           streamVideo(image);
         }
         capturedFrames++;
@@ -90,7 +105,9 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (controller == null || !controller!.value.isInitialized) {
+    if (controller == null ||
+        !controller!.value.isInitialized ||
+        areFramesCaptured == false) {
       return const Center(child: CircularProgressIndicator());
     }
 
@@ -100,7 +117,24 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
         body: Column(
           children: [
             Expanded(
-              child: CameraPreview(controller!),
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: SizedBox(
+                  width: areFramesCaptured
+                      ? width.toDouble()
+                      : MediaQuery.of(context).size.width,
+                  height: areFramesCaptured
+                      ? height.toDouble()
+                      : MediaQuery.of(context).size.height,
+                  child: Transform.rotate(
+                    angle: math.pi / 2, // Adjust the angle as needed
+                    child: AspectRatio(
+                      aspectRatio: controller!.value.aspectRatio,
+                      child: CameraPreview(controller!),
+                    ),
+                  ),
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
