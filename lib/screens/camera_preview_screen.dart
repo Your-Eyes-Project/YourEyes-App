@@ -41,7 +41,7 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
     cameras = await availableCameras();
     CameraDescription? backCamera = cameras?.firstWhere(
         (camera) => camera.lensDirection == CameraLensDirection.back);
-    controller = CameraController(backCamera!, ResolutionPreset.high);
+    controller = CameraController(backCamera!, ResolutionPreset.medium);
 
     speechToText = SpeechToTextService();
     textToSpeech = TextToSpeechService();
@@ -60,9 +60,11 @@ class CameraPreviewScreenState extends State<CameraPreviewScreen> {
           capturedFrames = 1;
 
           if (areFramesCaptured == false) {
-            width = image.width;
-            height = image.height;
-            areFramesCaptured = true;
+            setState(() {
+              width = image.width;
+              height = image.height;
+              areFramesCaptured = true;
+            });
           }
 
           streamVideo(image);
